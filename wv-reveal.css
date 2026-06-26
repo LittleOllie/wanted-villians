@@ -1773,7 +1773,7 @@
     text-align: center;
     font-family: 'Baloo 2', system-ui, -apple-system, sans-serif;
     font-weight: 600;
-    font-size: 1.9rem;
+    font-size: 1.425rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.42);
@@ -1781,12 +1781,12 @@
 }
 
 .wv-hub-page .wv-hub-scene {
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
     .wv-powered-by {
-        font-size: 1.72rem;
+        font-size: 1.29rem;
     }
 
     .wv-reveal-page:not(.wv-hub-page):not(.wv-characters-page) .wv-powered-by {
