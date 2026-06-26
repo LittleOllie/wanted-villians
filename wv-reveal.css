@@ -1279,6 +1279,12 @@
     transform: translateY(24px);
 }
 
+@media (min-width: 481px) {
+    .wv-characters-page .wv-gallery {
+        padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
 .wv-gallery.is-open .wv-gallery-nav {
     animation: wv-gallery-nav-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
 }
@@ -1557,20 +1563,17 @@
     border-radius: 999px;
 }
 
-.wv-hub-kicker {
-    margin: 0 0 8px;
-    font-family: 'Bangers', 'Arial Black', sans-serif;
-    font-size: clamp(1rem, 3.2vmin, 1.35rem);
-    letter-spacing: 0.12em;
-    color: #ffd54a;
-    text-shadow: 2px 2px 0 #000;
+.wv-hub-header {
+    align-self: stretch;
+    max-width: min(640px, 100%);
+    margin-inline: auto;
 }
 
-.wv-hub-title {
+.wv-hub-kicker {
     margin: 0 0 10px;
     font-family: 'Bangers', 'Arial Black', sans-serif;
-    font-size: clamp(2.4rem, 9vmin, 4.5rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(2.2rem, 8.5vmin, 4.25rem);
+    letter-spacing: 0.08em;
     line-height: 1;
     color: #ffe566;
     text-shadow:
@@ -1579,14 +1582,18 @@
         0 4px 0 rgba(0, 0, 0, 0.45);
 }
 
-.wv-howto-label {
-    margin: 0 0 4px;
+.wv-hub-title {
+    margin: 0 0 10px;
     font-family: 'Bangers', 'Arial Black', sans-serif;
-    font-size: clamp(1.35rem, 4.5vmin, 2rem);
+    font-size: clamp(1.15rem, 3.8vmin, 1.65rem);
     letter-spacing: 0.1em;
     line-height: 1;
     color: #ffd54a;
     text-shadow: 2px 2px 0 #000;
+}
+
+.wv-hub-title--single {
+    white-space: nowrap;
 }
 
 .wv-hub-sub {

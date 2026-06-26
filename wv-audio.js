@@ -214,54 +214,61 @@ const wvAudio = {
         });
     },
 
-    _playWhooshImpl(options = {}) {
-        if (!this._ensureReady()) {
+    _playSwooshImpl(options = {}) {
+        if (!this.ctx) {
             return;
         }
 
         const {
-            lowHz = 240,
-            highHz = 2600,
-            peak = 0.34,
-            duration = 0.26
+            direction = 1,
+            duration = 0.54,
+            peak = 0.3
         } = options;
         const t = this.ctx.currentTime;
         const bufferSize = Math.floor(this.ctx.sampleRate * duration);
         const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
         const data = buffer.getChannelData(0);
+        let pink = 0;
 
         for (let i = 0; i < bufferSize; i += 1) {
-            data[i] = Math.random() * 2 - 1;
+            const white = Math.random() * 2 - 1;
+            pink = pink * 0.96 + white * 0.04;
+            data[i] = pink;
         }
 
         const src = this.ctx.createBufferSource();
         src.buffer = buffer;
+
         const filter = this.ctx.createBiquadFilter();
-        filter.type = 'bandpass';
-        filter.frequency.setValueAtTime(lowHz, t);
-        filter.frequency.exponentialRampToValueAtTime(highHz, t + duration * 0.55);
-        filter.frequency.exponentialRampToValueAtTime(lowHz * 0.8, t + duration);
-        filter.Q.value = 0.75;
+        filter.type = 'lowpass';
+        const startHz = direction >= 0 ? 160 : 2600;
+        const endHz = direction >= 0 ? 2600 : 160;
+        filter.frequency.setValueAtTime(startHz, t);
+        filter.frequency.exponentialRampToValueAtTime(endHz, t + duration * 0.78);
+        filter.Q.value = 0.55;
+
         const gain = this.ctx.createGain();
         gain.gain.setValueAtTime(0.0001, t);
-        gain.gain.exponentialRampToValueAtTime(peak, t + 0.025);
+        gain.gain.exponentialRampToValueAtTime(peak, t + 0.1);
+        gain.gain.setValueAtTime(peak * 0.82, t + duration * 0.42);
         gain.gain.exponentialRampToValueAtTime(0.0001, t + duration);
+
         src.connect(filter);
         filter.connect(gain);
         gain.connect(this.ctx.destination);
         src.start(t);
-        src.stop(t + duration + 0.02);
+        src.stop(t + duration + 0.05);
     },
 
     playWhooshArrival() {
         this._enqueueOrPlay(() => {
-            this._playWhooshImpl({ lowHz: 180, highHz: 2800, peak: 0.4, duration: 0.32 });
+            this._playSwooshImpl({ direction: 1, duration: 0.5, peak: 0.32 });
         });
     },
 
-    playWhoosh() {
+    playSwoosh(direction = 1) {
         this._enqueueOrPlay(() => {
-            this._playWhooshImpl();
+            this._playSwooshImpl({ direction, duration: 0.54, peak: 0.3 });
         });
     }
 };

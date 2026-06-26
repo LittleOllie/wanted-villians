@@ -13,9 +13,7 @@
     // Matches CSS animation delays — queued until audio unlocks on first tap.
     const arrivals = [
         { ms: 400, id: 'v' },
-        { ms: 1100, id: 'w' },
-        { ms: 2750, id: 'illians' },
-        { ms: 3650, id: 'anted' }
+        { ms: 1100, id: 'w' }
     ];
 
     const played = new Set();
@@ -48,8 +46,6 @@
 
     bindAnimationWhoosh(document.querySelector('.wv-v'), 'wv-v-pop', 'v');
     bindAnimationWhoosh(document.querySelector('.wv-w'), 'wv-w-pop', 'w');
-    bindAnimationWhoosh(document.querySelector('.wv-title-suffix'), 'wv-title-pop', 'illians');
-    bindAnimationWhoosh(document.querySelector('.wv-title-mid'), 'wv-title-pop', 'anted');
 })();
 
 const revealBtn = document.getElementById('wv-do-not-press-btn');
