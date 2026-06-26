@@ -1,0 +1,881 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2a2a2a;
+    --secondary-color: #4a4a4a;
+    --accent-color: #6c63ff;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('images/villains.jpg');
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: repeat-y;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Navbar */
+header {
+    background: rgba(230, 230, 230, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all var(--transition-speed) ease;
+}
+
+header:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.navbar h1 {
+    font-size: 24px; /* Taille du texte pour "by Nev." */
+    /*font-family: 'Press Start 2P', cursive; /* Par exemple, pour un style pixel art */
+    font-family: 'Baloo Paaji 2', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.pixel-logo {
+    width: auto; /* Assure une largeur automatique basée sur la hauteur */
+    height: 60px; /* Taille du logo (ajuste en fonction de la taille que tu veux) */
+    image-rendering: pixelated; /* Assure que le logo ne soit pas flou et garde son aspect pixel art */
+    margin-right: 10px; /* Espace entre le logo et "by Nev." */
+}
+
+.social-links a {
+    color: var(--text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 12px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    display: inline-block;
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.social-logo {
+    width: 24px; /* Ajuste la taille selon tes besoins */
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333; /* Texte en noir */
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px 20px;
+    color: #333; /* Texte en noir */
+}
+
+.hero h2 {
+    font-size: 2rem;
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-banner {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.do-not-press-bar {
+    display: flex;
+    justify-content: center;
+    padding: 16px 20px 8px;
+    background: transparent;
+}
+
+.do-not-press-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    line-height: 1.4;
+    padding: 12px 16px;
+    background-color: #ff4444;
+    color: #fff;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.do-not-press-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.do-not-press-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333; /* Texte noir */
+    margin-bottom: 20px;
+}
+
+/* Project Presentation Section */
+.project-presentation {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--card-background);
+    border-radius: 16px;
+    color: var(--text-color);
+    max-width: 1000px;
+    margin: 30px auto;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-speed) ease;
+}
+
+.project-presentation:hover {
+    transform: translateY(-5px);
+}
+
+.project-presentation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #555; /* Gris foncé pour les titres */
+}
+
+.project-presentation h3, .project-presentation h4 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    color: #555; /* Gris foncé */
+}
+
+.project-presentation p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666; /* Gris moyen pour le texte */
+}
+
+.project-presentation ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.project-presentation ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    list-style-type: disc;
+    color: #666; /* Gris moyen */
+}
+
+/* Tools Section Styling */
+.tools {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f5f5f5; /* Fond gris clair */
+    color: #333; /* Texte noir */
+    border-radius: 10px;
+}
+
+.tools h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333; /* Titre noir */
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.tool-card {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    padding: 25px;
+    max-width: 350px;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-speed) ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tool-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.tool-card:hover img {
+    transform: scale(1.02);
+}
+
+.tool-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333; /* Texte noir */
+}
+
+.tool-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666; /* Texte gris */
+}
+
+.tool-card .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    color: white;
+    background-color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.tool-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background-color: #5b52ff;
+}
+
+/* Upcoming Products Section Styling */
+.upcoming-products {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #e0e0e0; /* Fond gris moyen */
+    color: #333; /* Texte noir */
+    border-radius: 10px;
+}
+
+.upcoming-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333; /* Titre noir */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.product-card {
+    background-color: #fff; /* Cartes blanches */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 350px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333; /* Texte noir */
+}
+
+.product-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666; /* Texte gris */
+}
+
+.product-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #333; /* Bouton gris foncé */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.product-card .btn:disabled {
+    background-color: #555; /* Bouton gris foncé désactivé */
+}
+
+button {
+    background-color: #888;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: not-allowed;
+    border-radius: 5px;
+}
+
+/* FAQ Styling*/
+.faq {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f5f5f5; /* Fond gris clair */
+    color: #333; /* Texte noir */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Rank Checker */
+#rank-checker {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.rank-checker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#nft-id-input {
+    padding: 12px;
+    font-size: 1rem;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#nft-id-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#check-rank {
+    padding: 12px 20px;
+    background-color: #333; /* Bouton gris foncé */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#check-rank:hover {
+    background-color: #555;
+}
+
+#nft-display {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#nft-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+#nft-rank {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#rank-result {
+    font-size: 1.2rem;
+    color: #333; /* Texte noir */
+}
+
+#nft-traits-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#nft-traits-table th,
+#nft-traits-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Section Partners */
+#partners {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f0f0f0; /* Couleur de fond de la section */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#partners h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les logos */
+    flex-wrap: wrap; /* Permet aux logos de passer à la ligne si l'écran est petit */
+}
+
+.partner-logos a {
+    display: inline-block;
+}
+
+.partner-logos img {
+    width: 15%;
+    border-radius: 80px;
+    width: 100px; /* Ajuste la taille du logo */
+    height: auto;
+    transition: transform 0.3s ease; /* Ajoute une transition sur le hover */
+}
+
+.partner-logos img:hover {
+    transform: scale(1.1); /* Effet de zoom lorsque l'on survole le logo */
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #333; /* Fond gris foncé */
+    color: #fff; /* Texte blanc */
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-bottom: 10px; /* Espacement sous le texte du footer */
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les logos */
+}
+
+.footer-logos a {
+    display: inline-block;
+}
+
+.footer-logos img {
+    width: 8%;
+    width: 30px; /* Taille des logos plus petite */
+    height: auto;
+    filter: none; /* Aucune modification d'image ou background autour des logos */
+    transition: transform 0.3s ease; /* Effet de zoom au survol */
+}
+
+.footer-logos img:hover {
+    transform: scale(1.1); /* Légère augmentation de la taille au survol */
+}
+
+/* OpenSea Stats Section */
+/* Style global */
+.opensea-stats {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px; /* Augmente la largeur pour s'adapter à une ligne */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Grille pour les statistiques principales en une seule ligne */
+.stats-main-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes pour aligner sur une ligne */
+    gap: 20px;
+    justify-content: center;
+    max-width: 95%;
+    margin: 0 auto 40px auto; /* Centré avec un espace en bas */
+}
+
+/* Grille pour les statistiques d'intervalles */
+.stats-interval-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    gap: 20px;
+    justify-content: center;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Statistiques principales - taille moyenne */
+.stat-item.large {
+    background-color: #1497d9; /* Fond gris foncé */
+    color: #000000; /* Texte blanc */
+    border: 1px solid #0f77ab;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Prend 100% de la largeur de la colonne */
+    max-width: 80%; /* Limite la taille des cartes */
+    margin: 0 auto;
+}
+
+/* Statistiques par intervalle - plus petites */
+.stat-item.small {
+    background-color: #19b1fd; /* Fond gris moyen */
+    color: #000000; /* Texte légèrement plus clair */
+    border: 1px solid #1497d9;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 50%; /* Limite la taille des cartes secondaires */
+    margin: 0 auto;
+}
+
+/* Pour tous les items de stats */
+.stat-item h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #000000; /* Couleur du titre légèrement plus claire */
+}
+
+.stat-item p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        flex-direction: column; /* Empiler les éléments dans la navbar sur les petits écrans */
+        align-items: center; /* Centrer les éléments */
+    }
+    
+
+    .hero {
+        padding: 30px 10px; /* Réduire le padding */
+    }
+
+    .do-not-press-btn {
+        font-size: 0.45rem;
+        padding: 8px 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .project-presentation h2,
+    .tools h2,
+    .upcoming-products h2 {
+        font-size: 2rem;
+    }
+
+    .tool-card, .product-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adapter les images */
+    .tool-card img, .product-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .rank-checker-container {
+        flex-direction: column; /* Empiler les éléments */
+    }
+
+    #nft-id-input {
+        width: 100%; /* Champs de saisie pleine largeur */
+    }
+
+    #check-rank {
+        width: 100%; /* Bouton pleine largeur */
+    }
+
+    .social-links a {
+        margin: 5px 0;
+    }
+
+    /* Réduire les marges/paddings */
+    section, .tools, .project-presentation, .upcoming-products, .opensea-stats, .partners {
+        padding: 20px 10px;
+        width: 90%;
+    }
+
+    .footer-logos img {
+        width: 15%; /* Augmente la taille des logos pour les écrans plus petits */
+        min-width: 20px;
+    }
+
+    .partner-logos img {
+        width: 20%; /* Ajuste la taille pour les écrans plus petits */
+    }
+
+    .stats-main-grid {
+        grid-template-columns: repeat(5, 1fr); /* 2 colonnes pour mobile */
+    }
+
+    .stats-interval-grid {
+        grid-template-columns: repeat(3, 1fr); /* 1 colonne pour mobile */
+    }
+
+    /* Réduire la taille des items sur mobile */
+    .stat-item.large, .stat-item.small {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .stat-item p {
+        font-size: 1.2rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero p, .project-presentation p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-presentation h2,
+    .tools h2,
+    .upcoming-products h2 {
+        font-size: 1.8rem;
+    }
+
+    .tool-card h3,
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Réduire encore la taille des boutons et des inputs */
+    #check-rank, #nft-id-input {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .footer-logos img {
+        width: 20%; /* Augmente encore pour les petits écrans */
+        min-width: 20px;
+    }
+
+    .partner-logos img {
+        width: 10%; /* Ajuste la taille pour les petits écrans */
+    }
+
+    .stats-main-grid {
+        grid-template-columns: repeat(5, 1fr); /* 2 colonnes pour mobile */
+    }
+
+    .stats-interval-grid {
+        grid-template-columns: repeat(3, 1fr); /* 1 colonne pour mobile */
+    }
+
+    .stat-item.large, .stat-item.small {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .stat-item p {
+        font-size: 1rem;
+    }
+    
+    /* Réduire les marges/paddings */
+    section, .tools, .project-presentation, .upcoming-products, .opensea-stats, .partners {
+        padding: 20px 10px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero p, .project-presentation p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-presentation h2,
+    .tools h2,
+    .upcoming-products h2 {
+        font-size: 1.8rem;
+    }
+
+    .tool-card h3,
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Réduire encore la taille des boutons et des inputs */
+    #check-rank, #nft-id-input {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .footer-logos img {
+        width: 20%; /* Augmente encore pour les petits écrans */
+        min-width: 20px;
+    }
+
+    .partner-logos img {
+        width: 10%; /* Ajuste la taille pour les petits écrans */
+    }
+
+    .stats-main-grid {
+        grid-template-columns: repeat(3, 1fr); /* 2 colonnes pour mobile */
+    }
+
+    .stats-interval-grid {
+        grid-template-columns: repeat(3, 1fr); /* 1 colonne pour mobile */
+    }
+
+    .stat-item.large, .stat-item.small {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .stat-item p {
+        font-size: 1rem;
+    }
+
+    /* Réduire les marges/paddings */
+    section, .tools, .project-presentation, .upcoming-products, .opensea-stats, .partners {
+        padding: 20px 10px;
+        width: 90%;
+    }
+}

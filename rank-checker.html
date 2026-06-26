@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villains by Nev. - Rank Checker</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assurez-vous que les styles correspondent à vos besoins -->
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <header>
+        <nav class="navbar">
+            <h1>
+                <img src="images/VILLAINSlogo.png" alt="Villains Logo" class="pixel-logo">
+            </h1>            
+            <div class="social-links">
+                <a href="index.html" class="btn"> < Back Home</a>
+                <a href="why-base.html" class="btn">Why Base?</a>
+                <a href="faq.html" class="btn">FAQ</a>
+                <a href="https://opensea.io/collection/vvbynev" target="_blank" class="btn">
+                    <img src="images/OSlogo.png" alt="OpenSea Logo" class="social-logo">
+                </a>
+                <a href="https://magiceden.io/collections/base/0xa91b95a1dba98e3537ead7aa4a488a8886316be2" target="_blank" class="btn">
+                    <img src="images/MElogo.png" alt="Magic Eden Logo" class="social-logo">
+                </a>
+                <a href="https://x.com/byNeviras" target="_blank" class="btn">
+                    <img src="images/Xlogo.png" alt="X Logo" class="social-logo">
+                </a>             </div>
+        </nav>
+    </header>
+
+    <!-- Section Rank Checker -->
+    <section id="rank-checker">
+        <h2>Rank Checker</h2>
+        <div class="rank-checker-container">
+            <input type="number" id="nft-id-input" placeholder="Enter NFT number" />
+            <button id="check-rank">Check Rank</button>
+        </div>
+        
+        <div id="nft-display" class="hidden">
+            <img id="nft-image" src="" alt="NFT Image" />
+            <p id="nft-rank">Rank: </p>
+            
+            <table id="nft-traits-table">
+                <thead>
+                    <tr>
+                        <th>Trait Type</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les traits seront ajoutés ici -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <script src="rank-checker.js"></script> <!-- Lien vers votre script JS -->
+</body>
+</html>
