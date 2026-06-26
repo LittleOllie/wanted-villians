@@ -74,6 +74,8 @@ if (!gallery) {
         clearSlideClasses();
 
         if (direction) {
+            wvAudio.unlock();
+            wvAudio.playWhoosh();
             gallerySlide.classList.add(direction === 1 ? 'is-exiting-next' : 'is-exiting-prev');
             await waitForAnimation(gallerySlide);
         }
@@ -119,6 +121,7 @@ if (!gallery) {
             return;
         }
 
+        wvAudio.unlock();
         const nextIndex = (currentIndex + 1) % WV_SLIDES.length;
         showSlide(nextIndex, 1);
     }
@@ -128,6 +131,7 @@ if (!gallery) {
             return;
         }
 
+        wvAudio.unlock();
         const prevIndex = (currentIndex - 1 + WV_SLIDES.length) % WV_SLIDES.length;
         showSlide(prevIndex, -1);
     }
